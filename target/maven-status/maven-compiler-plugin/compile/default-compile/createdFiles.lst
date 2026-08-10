@@ -1,0 +1,9 @@
+com\ewaste\connect\model\RecyclingRequest.class
+com\ewaste\connect\model\PricingItem.class
+com\ewaste\connect\EWasteConnectApplication.class
+com\ewaste\connect\repository\RequestRepository.class
+com\ewaste\connect\model\Provider.class
+com\ewaste\connect\config\DataInitializer.class
+com\ewaste\connect\repository\ProviderRepository.class
+com\ewaste\connect\controller\ProviderController.class
+com\ewaste\connect\controller\RequestController.class

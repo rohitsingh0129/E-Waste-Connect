@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Become a Provider | E-Waste Connect</title>
+  <meta name="description" content="Register your e-waste collection or recycling facility on E-Waste Connect to reach individual generators and repair businesses.">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="provider.html">
+
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">♻️</div>
+        <div class="brand-text">E-Waste <span>Connect</span></div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="find-provider.html" class="nav-link">Find Provider</a></li>
+        <li><a href="provider.html" class="nav-link active">Become a Provider</a></li>
+        <li><a href="provider-dashboard.html" class="nav-link">Provider Dashboard</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="provider-dashboard.html" class="btn btn-outline btn-sm">Provider Portal</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content section">
+    <div class="container" style="max-width: 860px;">
+      
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <div class="hero-badge">
+          <span>🏢 Partner Registration</span>
+        </div>
+        <h1 style="font-size: 2.25rem; margin-bottom: 0.5rem;">List Your E-Waste Business</h1>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+          Connect with individuals, repair shops, electronics stores, offices, and housing societies looking for reliable e-waste collection and recycling services.
+        </p>
+      </div>
+
+      <div class="card">
+        <form id="provider-register-form">
+          
+          <h3 style="font-size: 1.15rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+            1. Business Information
+          </h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="reg-biz-name">Business Name *</label>
+              <input type="text" class="form-control" id="reg-biz-name" placeholder="e.g. GreenTech Recyclers LLP" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-owner">Owner / Contact Person *</label>
+              <input type="text" class="form-control" id="reg-owner" placeholder="Full Name" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="reg-email">Business Email *</label>
+              <input type="email" class="form-control" id="reg-email" placeholder="contact@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-phone">Phone Number *</label>
+              <input type="tel" class="form-control" id="reg-phone" placeholder="+91 XXXXX XXXXX" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="reg-address">Facility Address *</label>
+            <input type="text" class="form-control" id="reg-address" placeholder="Plot No., GIDC / Industrial Area, Street" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="reg-city">City *</label>
+              <input type="text" class="form-control" id="reg-city" placeholder="e.g. Ahmedabad" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-state">State *</label>
+              <input type="text" class="form-control" id="reg-state" value="Gujarat" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-pincode">Pincode *</label>
+              <input type="text" class="form-control" id="reg-pincode" placeholder="380001" required>
+            </div>
+          </div>
+
+          <h3 style="font-size: 1.15rem; margin-top: 1.5rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+            2. Services Provided
+          </h3>
+
+          <div class="checkbox-grid" style="margin-bottom: 1.5rem;">
+            <label class="checkbox-item"><input type="checkbox" name="services" value="collection" checked> E-Waste Collection</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="recycling" checked> Recycling Facility</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="bulk" checked> Bulk Corporate Scrap</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="pickup" checked> Doorstep Pickup</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="transport"> Own Transportation</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="recovery" checked> Precious Metal Recovery</label>
+          </div>
+
+          <h3 style="font-size: 1.15rem; margin-top: 1.5rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+            3. Accepted Waste Types
+          </h3>
+
+          <div class="checkbox-grid" style="margin-bottom: 1.5rem;">
+            <label class="checkbox-item"><input type="checkbox" name="acceptedWaste" value="PCB" checked> PCB Circuit Boards</label>
+            <label class="checkbox-item"><input type="checkbox" name="acceptedWaste" value="Mobile Phone" checked> Mobile Phones</label>
+            <label class="checkbox-item"><input type="checkbox" name="acceptedWaste" value="Laptop" checked> Laptops</label>
+            <label class="checkbox-item"><input type="checkbox" name="acceptedWaste" value="Computer"> Computers</label>
+            <label class="checkbox-item"><input type="checkbox" name="acceptedWaste" value="Battery" checked> Batteries</label>
+            <label class="checkbox-item"><input type="checkbox" name="acceptedWaste" value="Charger"> Chargers / Adapters</label>
+            <label class="checkbox-item"><input type="checkbox" name="acceptedWaste" value="Copper Wire" checked> Copper Wires</label>
+            <label class="checkbox-item"><input type="checkbox" name="acceptedWaste" value="Monitor"> Monitors</label>
+            <label class="checkbox-item"><input type="checkbox" name="acceptedWaste" value="Printer"> Printers</label>
+            <label class="checkbox-item"><input type="checkbox" name="acceptedWaste" value="Other"> Other Electronic Scrap</label>
+          </div>
+
+          <h3 style="font-size: 1.15rem; margin-top: 1.5rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+            4. Service & Pricing Information
+          </h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="reg-price">Reference Rate (₹) *</label>
+              <input type="number" class="form-control" id="reg-price" value="250" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-unit">Price Unit *</label>
+              <select class="form-select" id="reg-unit">
+                <option value="kg">Per kg</option>
+                <option value="unit">Per unit</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-min-qty">Minimum Quantity *</label>
+              <input type="number" class="form-control" id="reg-min-qty" value="10" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="checkbox-item" style="margin-top: 1.8rem;">
+                <input type="checkbox" id="reg-pickup" checked>
+                <span>Doorstep Pickup Available</span>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox-item" style="margin-top: 1.8rem;">
+                <input type="checkbox" id="reg-transport" checked>
+                <span>Transportation Provided</span>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-transport-fee">Transportation Charge (₹)</label>
+              <input type="number" class="form-control" id="reg-transport-fee" value="0" placeholder="0 for Free">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="reg-description">Business Description</label>
+            <textarea class="form-control" id="reg-description" rows="3" placeholder="Briefly describe your recycling operations, certifications, and procurement focus."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 1.5rem;">
+            🏢 Complete Provider Registration
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom" style="border: none; padding-top: 0;">
+      <div>© 2026 E-Waste Connect. All rights reserved.</div>
+      <div>Frontend MVP Provider Registration</div>
+    </div>
+  </footer>
+
+  <script src="js/providers.js"></script>
+  <script src="js/requests.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

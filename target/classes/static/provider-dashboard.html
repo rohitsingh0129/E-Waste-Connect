@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Provider Dashboard | E-Waste Connect</title>
+  <meta name="description" content="Manage your e-waste scrap price listings and process incoming collection requests.">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="provider-dashboard.html">
+
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">♻️</div>
+        <div class="brand-text">E-Waste <span>Connect</span></div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="find-provider.html" class="nav-link">Find Provider</a></li>
+        <li><a href="provider.html" class="nav-link">Become a Provider</a></li>
+        <li><a href="provider-dashboard.html" class="nav-link active">Provider Dashboard</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <span class="badge badge-success">Recycler Active Portal</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content section">
+    <div class="container">
+      
+      <!-- Dashboard Top Header Bar -->
+      <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, #ffffff, #f8fafc);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="badge badge-primary" style="margin-bottom: 0.25rem;">Provider Management Portal</span>
+            <h1 id="dash-biz-name" style="font-size: 1.85rem;">ABC E-Waste Recycling</h1>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">Facility Location: Ahmedabad, Gujarat • GPCB Certified</p>
+          </div>
+          <div>
+            <button class="btn btn-primary" id="btn-open-add-modal">
+              ➕ Add New Waste Listing
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overview Metric Summary Cards -->
+      <div class="dashboard-grid">
+        <div class="metric-card">
+          <div class="metric-icon">📦</div>
+          <div>
+            <div class="metric-value" id="metric-active-listings">5</div>
+            <div class="metric-title">Active Scrap Listings</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">⏳</div>
+          <div>
+            <div class="metric-value" id="metric-pending-requests" style="color: var(--warning);">2</div>
+            <div class="metric-title">Pending Requests</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">✅</div>
+          <div>
+            <div class="metric-value" id="metric-completed-requests" style="color: var(--success);">14</div>
+            <div class="metric-title">Completed Orders</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">⚖️</div>
+          <div>
+            <div class="metric-value" id="metric-total-collected" style="color: var(--primary);">480 kg</div>
+            <div class="metric-title">Total E-Waste Collected</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+        
+        <!-- Left Column: Active Listings Table -->
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+            <h3 style="font-size: 1.2rem;">My Waste Rates & Listings</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Prices per kg/unit</span>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Waste Type</th>
+                  <th>Price</th>
+                  <th>Min Qty</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="listings-table-body">
+                <!-- Dynamically populated via provider-dashboard.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Right Column: Incoming Pickup Requests -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h3 style="font-size: 1.2rem;">Incoming Pickup Requests</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Action Required</span>
+          </div>
+
+          <div id="dashboard-requests-container">
+            <!-- Dynamically populated via provider-dashboard.js -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Add Listing Modal Dialog -->
+  <div class="modal-overlay" id="add-listing-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 style="font-size: 1.25rem;">Add New E-Waste Scrap Listing</h3>
+        <button class="modal-close" id="btn-close-add-modal">&times;</button>
+      </div>
+
+      <form id="add-listing-form">
+        <div class="form-group">
+          <label class="form-label" for="modal-waste-type">Select Waste Category</label>
+          <select class="form-select" id="modal-waste-type" required>
+            <option value="PCB">PCB / Circuit Board</option>
+            <option value="Mobile Phone">Mobile Phone</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Computer">Computer / Desktop</option>
+            <option value="Battery">Battery</option>
+            <option value="Charger">Charger & Adapter</option>
+            <option value="Copper Wire">Copper Wire</option>
+            <option value="Monitor">Monitor</option>
+            <option value="Printer">Printer</option>
+            <option value="Other">Other Electronic Scrap</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="modal-price">Price / Rate (₹) *</label>
+            <input type="number" class="form-control" id="modal-price" value="250" step="5" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="modal-unit">Unit *</label>
+            <select class="form-select" id="modal-unit">
+              <option value="kg">kg</option>
+              <option value="unit">unit</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="modal-min-qty">Minimum Quantity *</label>
+          <input type="number" class="form-control" id="modal-min-qty" value="10" required>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1.5rem;">
+          <button type="button" class="btn btn-outline" onclick="document.getElementById('btn-close-add-modal').click();">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Listing</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-bottom" style="border: none; padding-top: 0;">
+      <div>© 2026 E-Waste Connect. All rights reserved.</div>
+      <div>Frontend MVP Provider Dashboard</div>
+    </div>
+  </footer>
+
+  <script src="js/providers.js"></script>
+  <script src="js/requests.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/provider-dashboard.js"></script>
+</body>
+</html>
