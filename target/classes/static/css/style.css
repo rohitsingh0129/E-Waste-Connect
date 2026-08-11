@@ -950,3 +950,131 @@ img {
   .status-timeline { flex-direction: column; gap: 1.5rem; }
   .status-timeline::before { display: none; }
 }
+
+/* ==========================================================================
+   Provider Dashboard SaaS Theme & Circuit Background Overlay
+   ========================================================================== */
+
+body[data-page="provider-dashboard.html"] {
+  background-color: #f8fafc;
+  background-image: 
+    linear-gradient(rgba(248, 250, 252, 0.85), rgba(248, 250, 252, 0.85)),
+    url('../images/circuit-bg.png');
+  background-repeat: repeat;
+  background-position: center top;
+  background-size: 700px auto;
+  background-attachment: fixed;
+}
+
+/* Compact Page Header */
+.dashboard-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.dashboard-main-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.dashboard-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+/* Business Info Banner Card */
+.dashboard-biz-card {
+  background-color: #ffffff !important;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* Compact Metrics Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.metric-card {
+  background-color: #ffffff !important;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  padding: 1rem 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.metric-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1.35rem;
+}
+
+.metric-value {
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.metric-title {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Split Content Grid */
+.dashboard-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+/* Dashboard Opaque Cards */
+body[data-page="provider-dashboard.html"] .card {
+  background-color: #ffffff !important;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  padding: 1.25rem;
+}
+
+/* Compact Tables for Dashboard */
+body[data-page="provider-dashboard.html"] .table th {
+  padding: 0.65rem 0.85rem;
+  font-size: 0.8rem;
+}
+
+body[data-page="provider-dashboard.html"] .table td {
+  padding: 0.75rem 0.85rem;
+  font-size: 0.875rem;
+}
+
+/* Reduced Section Padding on Dashboard */
+body[data-page="provider-dashboard.html"] .main-content.section {
+  padding: 2rem 0 3rem;
+}
+
+@media (max-width: 992px) {
+  .dashboard-content-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
