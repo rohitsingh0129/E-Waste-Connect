@@ -32,8 +32,17 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Background Crossfade Slideshow -->
   <section class="hero">
+    <!-- Slideshow Background Container -->
+    <div class="hero-slideshow">
+      <div class="hero-slide active" style="background-image: url('images/hero-slide-1.png');" data-index="0"></div>
+      <div class="hero-slide" style="background-image: url('images/hero-slide-2.jpg');" data-index="1"></div>
+      <div class="hero-slide" style="background-image: url('images/hero-slide-3.png');" data-index="2"></div>
+      <div class="hero-slide" style="background-image: url('images/hero-slide-4.png');" data-index="3"></div>
+      <div class="hero-overlay"></div>
+    </div>
+
     <div class="container hero-grid">
       <div class="hero-content">
         <div class="hero-badge">
@@ -52,7 +61,7 @@
           <a href="find-provider.html" class="btn btn-primary btn-lg">
             🔍 Find a Recycling Provider
           </a>
-          <a href="provider.html" class="btn btn-secondary btn-lg">
+          <a href="provider.html" class="btn btn-secondary btn-lg" style="background: rgba(255,255,255,0.15); color: #ffffff; border-color: rgba(255,255,255,0.3);">
             🏢 Become a Provider
           </a>
         </div>
@@ -115,7 +124,16 @@
         </a>
       </div>
     </div>
+
+    <!-- Slideshow Navigation Indicator Dots -->
+    <div class="hero-indicators">
+      <button class="indicator-dot active" data-slide="0" aria-label="Slide 1: Collect"></button>
+      <button class="indicator-dot" data-slide="1" aria-label="Slide 2: Recycle"></button>
+      <button class="indicator-dot" data-slide="2" aria-label="Slide 3: Recover"></button>
+      <button class="indicator-dot" data-slide="3" aria-label="Slide 4: Sustain"></button>
+    </div>
   </section>
+
 
   <!-- How It Works Section -->
   <section class="section section-bg" id="how-it-works">

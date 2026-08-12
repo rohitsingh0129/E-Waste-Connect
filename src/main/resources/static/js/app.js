@@ -75,6 +75,10 @@ function routePageHandler() {
   const page = document.body.dataset.page || window.location.pathname.split('/').pop();
 
   switch (page) {
+    case 'index.html':
+    case '':
+      initHeroSlideshow();
+      break;
     case 'find-provider.html':
       initFindProviderPage();
       break;
@@ -91,9 +95,68 @@ function routePageHandler() {
       initProviderRegisterPage();
       break;
     default:
+      initHeroSlideshow();
       break;
   }
 }
+
+/* ==========================================================================
+   PAGE 1: Home Page Hero Background Crossfade Slideshow
+   ========================================================================== */
+function initHeroSlideshow() {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.indicator-dot');
+  if (slides.length === 0) return;
+
+  let currentSlide = 0;
+  let slideInterval = null;
+
+  function showSlide(index) {
+    slides.forEach((slide, idx) => {
+      if (idx === index) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+
+    dots.forEach((dot, idx) => {
+      if (idx === index) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    let next = (currentSlide + 1) % slides.length;
+    showSlide(next);
+  }
+
+  function startTimer() {
+    stopTimer();
+    slideInterval = setInterval(nextSlide, 5500);
+  }
+
+  function stopTimer() {
+    if (slideInterval) clearInterval(slideInterval);
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const slideIdx = parseInt(dot.getAttribute('data-slide'));
+      showSlide(slideIdx);
+      startTimer();
+    });
+  });
+
+  showSlide(0);
+  startTimer();
+}
+
 
 /* ==========================================================================
    PAGE 2: Find Provider Page Logic
